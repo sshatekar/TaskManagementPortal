@@ -1,0 +1,68 @@
+<Project>
+  <!-- Centralized build configuration for TaskManagementPortal -->
+  <!-- Applies to all projects in the solution -->
+
+  <PropertyGroup>
+    <!-- .NET 10 target framework -->
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Common package versions -->
+    <LangVersion>preview</LangVersion>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <!-- Treat warnings as errors in CI -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors />
+
+    <!-- Generate documentation for public APIs -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Assembly information -->
+    <Company>TaskManagementPortal</Company>
+    <Authors>TaskManagementPortal Team</Authors>
+    <Copyright>Copyright © 2026</Copyright>
+    <RepositoryUrl>https://github.com/your-org/TaskManagementPortal</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Shared package versions for easier maintenance -->
+  <PropertyGroup>
+    <EFCoreVersion>9.0.3</EFCoreVersion>
+    <FluentValidationVersion>12.2.0</FluentValidationVersion>
+    <MapsterVersion>10.0.14</MapsterVersion>
+    <SerilogVersion>9.0.0</SerilogVersion>
+    <SwashbuckleVersion>8.1.1</SwashbuckleVersion>
+    <XunitVersion>2.9.3</XunitVersion>
+    <FluentAssertionsVersion>8.1.1</FluentAssertionsVersion>
+    <MoqVersion>4.20.72</MoqVersion>
+  </PropertyGroup>
+
+  <!-- Configure analyzers for all projects -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- Test projects specific configuration -->
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('.Tests'))">
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <CollectCoverage>true</CollectCoverage>
+    <CoverletOutputFormat>opencover</CoverletOutputFormat>
+  </PropertyGroup>
+
+  <!-- Web API project specific -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'TaskManagementPortal.Api'">
+    <UserSecretsId>TaskManagementPortal.Api</UserSecretsId>
+  </PropertyGroup>
+</Project>

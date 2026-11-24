@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="D:/Projects/TaskManagementPortal/src/TaskManagementPortal.Api/TaskManagementPortal.Api.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/src/TaskManagementPortal.Application/TaskManagementPortal.Application.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/src/TaskManagementPortal.Core/TaskManagementPortal.Core.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/src/TaskManagementPortal.Infrastructure/TaskManagementPortal.Infrastructure.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/tests/TaskManagementPortal.Api.Tests/TaskManagementPortal.Api.Tests.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/tests/TaskManagementPortal.Application.Tests/TaskManagementPortal.Application.Tests.csproj" />
+  <Project Path="D:/Projects/TaskManagementPortal/tests/TaskManagementPortal.Infrastructure.Tests/TaskManagementPortal.Infrastructure.Tests.csproj" Id="15647804-1a7e-4148-9165-808f30274f79" />
+</Solution>
